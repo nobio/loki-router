@@ -1,0 +1,55 @@
+openapi: 3.0.3
+info:
+  title: Loki Router
+  description: Takes a log line and sends it to a loki derver
+  license:
+    name: MIT
+    url: "https://opensource.org/licenses/MIT"
+  version: 6.0.0
+servers:
+  - url: "http://localhost:30500/api"
+  - url: "https://ubuntu20:30501/api"
+tags:
+  - name: Loki
+
+paths:
+  /log:
+    post:
+      tags:
+        - logging
+      summary: Login of a user
+      description: >-
+        Takes a log information (mainly timestamp and log line)
+        and propagates it to a Loki server
+      requestBody:
+        description: Log information
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LogEntry"
+      responses:
+        "200":
+          description: Loginformation was accepted and routed (maybe not successful...)
+      x-codegen-request-body-name: User
+
+components:
+  schemas:
+    LogEntry:
+      required:
+        - log_line
+        - entry_date
+      type: object
+      additionalProperties: false
+      properties:
+        entry_date:
+          type: string
+          description: The date this log information occured
+          example: "2000-01-01T10:15:02.151Z"
+          format: date-time
+        log_line:
+          type: string
+          description: The log information in one line
+          example: "TODO"
+  responses:
+    UnauthorizedError:
+      description: Access token is missing or invalid; try to refresh your token

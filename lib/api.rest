@@ -1,0 +1,8 @@
+POST http://localhost:30500/api/log
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVGVzdGVyIiwiaWF0IjoxNTc5NDU4MjIwLCJleHAiOjE1Nzk0NTg1MjB9.LbEY5pihgOgvXff5355HqKN1NhdRfUc9yyRWtCyfTIk
+Content-Type: application/json
+
+{
+    "name": "Tester",
+    "password": "test12345"
+}
