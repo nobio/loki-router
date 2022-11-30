@@ -21,6 +21,21 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          # list of Docker images to use as base name for tags
+          images: |
+            nobio/timetracker
+          # generate Docker tags based on the following events/attributes
+          tags: |
+            type=schedule
+            type=ref,event=branch
+            type=ref,event=tag
+            type=ref,event=pr
+
       - name: loki-router ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
