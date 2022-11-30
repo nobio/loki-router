@@ -1,5 +1,5 @@
-#ROM node:18-alpine
-FROM node:16
+FROM node:18-alpine
+#FROM node:16
 
 # Create app directory
 WORKDIR /usr/src/app
