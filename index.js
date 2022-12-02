@@ -43,3 +43,5 @@ http.createServer(app).listen(app.get('port'), app.get('host'), () => {
 https.createServer(sslOptions, app).listen(app.get('ssl-port'), app.get('host'), () => {
   console.log(`https server listening on https://${app.get('host')}:${app.get('ssl-port')}`);
 });
+
+console.log(`sending logs to loki at ${process.env.LOKI_URL}`);
