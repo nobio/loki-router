@@ -1,8 +1,97 @@
 POST http://localhost:30500/api/log
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVGVzdGVyIiwiaWF0IjoxNTc5NDU4MjIwLCJleHAiOjE1Nzk0NTg1MjB9.LbEY5pihgOgvXff5355HqKN1NhdRfUc9yyRWtCyfTIk
 Content-Type: application/json
 
 {
-    "name": "Tester",
-    "password": "test12345"
+   "upstream_uri":"/api/ping",
+   "tries":[
+      {
+         "port":30000,
+         "balancer_start":1669822273615,
+         "ip":"172.29.0.6",
+         "balancer_latency":0
+      }
+   ],
+   "request":{
+      "uri":"/timetracker/api/ping",
+      "querystring":{
+
+      },
+      "url":"http://qnap-nas:8000/timetracker/api/ping",
+      "method":"GET",
+      "size":711,
+      "headers":{
+         "host":"qnap-nas:8000",
+         "authorization":"REDACTED",
+         "accept-encoding":"gzip, deflate, br",
+         "if-none-match":"W/\"30-GgdSHxhQ+WZ1+FC5z++POqGjJuw\"",
+         "user-agent":"Mozilla/5.0 (iPhone; CPU iPhone OS 16_1_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Mobile/15E148 Safari/604.1",
+         "accept-language":"de-DE,de;q=0.9",
+         "accept":"application/json, text/plain, */*",
+         "connection":"close",
+         "x-correlation-id":"232e3e5f-2d7d-4213-8848-a4a8393b0fe1#308",
+         "referer":"https://nobio.myhome-server.de/timetracker/"
+      }
+   },
+   "latencies":{
+      "proxy":4,
+      "kong":23,
+      "request":27
+   },
+   "route":{
+      "name":"timetracker-ping",
+      "updated_at":1668969330,
+      "paths":[
+         "/timetracker/api/ping"
+      ],
+      "service":{
+         "id":"c9eccb76-fb34-450a-8ee0-3fb1c2884942"
+      },
+      "path_handling":"v1",
+      "ws_id":"4c7c2acb-66fb-40af-be5c-11e69ce7c26b",
+      "id":"6cc0425f-ea9b-410d-a6e1-e1676dd8cd28",
+      "created_at":1668969330,
+      "protocols":[
+         "http",
+         "https"
+      ],
+      "strip_path":true,
+      "preserve_host":false,
+      "regex_priority":0,
+      "https_redirect_status_code":426,
+      "request_buffering":true,
+      "response_buffering":true
+   },
+   "service":{
+      "port":30000,
+      "name":"timetracker-ping",
+      "enabled":true,
+      "connect_timeout":5000,
+      "read_timeout":5000,
+      "host":"timetracker",
+      "id":"c9eccb76-fb34-450a-8ee0-3fb1c2884942",
+      "protocol":"http",
+      "ws_id":"4c7c2acb-66fb-40af-be5c-11e69ce7c26b",
+      "created_at":1668969329,
+      "path":"/api/ping",
+      "retries":0,
+      "write_timeout":5000,
+      "updated_at":1668969329
+   },
+   "started_at":1669822273592,
+   "client_ip":"192.168.178.62",
+   "response":{
+      "size":313,
+      "status":304,
+      "headers":{
+         "x-kong-proxy-latency":"23",
+         "x-kong-upstream-latency":"4",
+         "x-correlation-id":"232e3e5f-2d7d-4213-8848-a4a8393b0fe1#308",
+         "via":"kong/3.0.1",
+         "date":"Wed, 30 Nov 2022 15:31:13 GMT",
+         "x-powered-by":"Express",
+         "connection":"close",
+         "access-control-allow-origin":"*",
+         "etag":"W/\"30-GgdSHxhQ+WZ1+FC5z++POqGjJuw\""
+      }
+   }
 }
