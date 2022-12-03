@@ -1,4 +1,5 @@
-POST http://ubuntu20:30500/api/log
+#POST http://ubuntu20:30500/api/log
+POST http://localhost:30500/api/log
 Content-Type: application/json
 
 {
