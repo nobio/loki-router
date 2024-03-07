@@ -36,12 +36,10 @@ app.use((error, req, res, next) => {
 })
 /* ================= start the web service on http ================= */
 http.createServer(app).listen(app.get('port'), app.get('host'), () => {
-  console.log(`http server listening on http://${app.get('host')}:${app.get('port')}`);
+  console.log(`loki-router listening on http://${app.get('host')}:${app.get('port')}`);
 });
 
 /* ================= start the web service on https ================= */
 https.createServer(sslOptions, app).listen(app.get('ssl-port'), app.get('host'), () => {
-  console.log(`https server listening on https://${app.get('host')}:${app.get('ssl-port')}`);
+  console.log(`loki-router listening on https://${app.get('host')}:${app.get('ssl-port')}`);
 });
-
-console.log(`sending logs to loki at ${process.env.LOKI_URL}`);
