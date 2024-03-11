@@ -1,4 +1,125 @@
-#POST http://ubuntu20:30500/api/log
+POST http://localhost:30500/api/log
+Content-Type: application/json
+
+{
+  "request": {
+    "id": "35dede30b53da55916adce7d97b8731f",
+    "querystring": {},
+    "method": "GET",
+    "headers": {
+      "api-key": "GiHXjgRKs3gEDJjyfovJsP8pzUkjEJTi",
+      "user-agent": "Uptime-Kuma/1.23.11",
+      "x-consumer-id": "622de296-8006-4094-ab99-a1a060da44f5",
+      "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+      "x-consumer-username": "uptime-kuma",
+      "x-credential-identifier": "c496c652-d112-41b9-8be3-c47acef285c2",
+      "host": "qnap-nas:8000",
+      "connection": "close",
+      "x-consumer-custom-id": "uptime-kuma",
+      "x-correlation-id": "4827b554-4a1b-4035-9c06-7d2994d9c251#147"
+    },
+    "size": 301,
+    "url": "http://qnap-nas:8000/timetracker/api/health",
+    "uri": "/timetracker/api/health"
+  },
+  "correlation_id": "4827b554-4a1b-4035-9c06-7d2994d9c251#147",
+  "upstream_uri": "/api/health",
+  "latencies": {
+    "kong": 1,
+    "request": 470,
+    "proxy": 469
+  },
+  "authenticated_entity": {
+    "id": "c496c652-d112-41b9-8be3-c47acef285c2"
+  },
+  "started_at": 1710175680058,
+  "upstream_status": "200",
+  "client_ip": "192.168.178.62",
+  "consumer": {
+    "tags": [
+      "ui",
+      "frontend",
+      "kuma",
+      "health"
+    ],
+    "id": "622de296-8006-4094-ab99-a1a060da44f5",
+    "custom_id": "uptime-kuma",
+    "username": "uptime-kuma",
+    "created_at": 1708888391,
+    "updated_at": 1709828229
+  },
+  "service": {
+    "ws_id": "cecbc47d-ffc4-4b51-acb0-9d4e18c73e75",
+    "connect_timeout": 5000,
+    "read_timeout": 5000,
+    "host": "timetracker",
+    "enabled": true,
+    "path": "/api/health",
+    "name": "timetracker-health",
+    "created_at": 1707649780,
+    "updated_at": 1707649780,
+    "port": 30000,
+    "write_timeout": 5000,
+    "protocol": "http",
+    "id": "942c55d7-f06d-4279-b657-0dba443810b9",
+    "retries": 0
+  },
+  "response": {
+    "status": 200,
+    "size": 690,
+    "headers": {
+      "content-length": "264",
+      "via": "kong/3.6.1",
+      "x-kong-proxy-latency": "1",
+      "date": "Mon, 11 Mar 2024 16:48:00 GMT",
+      "x-kong-upstream-latency": "469",
+      "x-kong-request-id": "35dede30b53da55916adce7d97b8731f",
+      "connection": "close",
+      "x-powered-by": "Express",
+      "content-type": "application/json; charset=utf-8",
+      "etag": "W/108-UB84Virk1mF67Sp6jPsTdcqoe20",
+      "access-control-allow-origin": "*",
+      "x-correlation-id": "4827b554-4a1b-4035-9c06-7d2994d9c251#147"
+    }
+  },
+  "tries": [
+    {
+      "balancer_start": 1710175680059,
+      "balancer_start_ns": 1710175680059000000,
+      "balancer_latency_ns": 26624,
+      "balancer_latency": 0,
+      "port": 30000,
+      "ip": "172.29.0.4"
+    }
+  ],
+  "route": {
+    "ws_id": "cecbc47d-ffc4-4b51-acb0-9d4e18c73e75",
+    "preserve_host": false,
+    "path_handling": "v1",
+    "strip_path": true,
+    "paths": [
+      "/timetracker/api/health"
+    ],
+    "request_buffering": true,
+    "response_buffering": true,
+    "name": "timetracker-health",
+    "created_at": 1707649782,
+    "updated_at": 1707649782,
+    "regex_priority": 0,
+    "service": {
+      "id": "942c55d7-f06d-4279-b657-0dba443810b9"
+    },
+    "id": "af0556d3-aad0-42a2-a2b0-36f552dfe639",
+    "https_redirect_status_code": 426,
+    "protocols": [
+      "http",
+      "https"
+    ]
+  },
+  "source": "upstream"
+}
+
+###
 POST http://localhost:30500/api/log
 Content-Type: application/json
 
