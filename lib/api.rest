@@ -7,7 +7,7 @@ Content-Type: application/json
     "querystring": {},
     "method": "GET",
     "headers": {
-      "api-key": "GiHXjgRKs3gEDJjyfovJsP8pzUkjEJTi",
+      "api-key": "",
       "user-agent": "Uptime-Kuma/1.23.11",
       "x-consumer-id": "622de296-8006-4094-ab99-a1a060da44f5",
       "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
